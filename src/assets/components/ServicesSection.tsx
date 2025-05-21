@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Paintbrush, Code, Gem, Trophy, BarChart, Lightbulb } from 'lucide-react';
+import bgservicev from "../images/bgimg11.png";
 
 const services = [
   {
@@ -37,14 +37,24 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section id="services" className="section-padding bg-white">
-      <div className="container-custom">
+    <section id="about" className="relative section-padding bg-light-gray overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={bgservicev} 
+          alt="Background" 
+          className="w-full h-full object-cover opacity-50"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 container-custom">
         <div className="max-w-xl mx-auto text-center mb-16">
           <p className="text-gold uppercase tracking-wider font-medium mb-4">What We Offer</p>
           <h2 className="heading-lg mb-6">Our Premium Services</h2>
           <div className="w-20 h-1 bg-gold mx-auto"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 

@@ -1,11 +1,21 @@
-
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
+import bgservicev from "../images/bgimg11.png";
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="section-padding bg-light-gray">
-      <div className="container-custom">
+    <section id="about" className="relative section-padding bg-light-gray overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={bgservicev} 
+          alt="Background" 
+          className="w-full h-full object-cover opacity-50"
+        />
+      </div>
+
+      {/* Foreground Content */}
+      <div className="relative z-10 container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img 

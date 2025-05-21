@@ -21,14 +21,6 @@ const HeroSection: React.FC = () => {
           <p className="text-xl opacity-90 mb-12 max-w-xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Vrindavan, known as 'The Land of Krishna', is now a transition city, attracting opportunities and population growth, upgrading Mathura-Vrindavan from Grade Z to Grade Y.
 
-
-
-
-
-
-
-
-
           </p>
           <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <a 
