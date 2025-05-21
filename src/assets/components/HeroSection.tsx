@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import bgimage from "../images/heroimage22.jpg";
 
 const HeroSection: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const HeroSection: React.FC = () => {
       id="home" 
       className="relative min-h-screen flex items-center bg-dark-gray text-white"
       style={{
-        backgroundImage: 'linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)), url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")',
+        backgroundImage: `linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)), url(${bgimage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

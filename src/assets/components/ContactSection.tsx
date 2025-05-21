@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import bgservicev from "../images/bgimg11.png";
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
     subject: '',
     message: '',
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -22,13 +22,12 @@ const ContactSection: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
+
       setTimeout(() => {
         setSubmitSuccess(false);
       }, 3000);
@@ -36,54 +35,67 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-white">
-      <div className="container-custom">
+    <section
+      id="contact"
+      className="section-padding relative overflow-hidden bg-light-gray"
+    >
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={bgservicev} 
+          alt="Background" 
+          className="w-full h-full object-cover opacity-50"
+        />
+      </div>
+
+      {/* Foreground Content */}
+      <div className="container-custom relative z-10 text-black">
         <div className="max-w-xl mx-auto text-center mb-16">
           <p className="text-gold uppercase tracking-wider font-medium mb-4">Get In Touch</p>
-          <h2 className="heading-lg mb-6">Contact Us</h2>
+          <h2 className="heading-lg mb-6 text-black">Contact Us</h2>
           <div className="w-20 h-1 bg-gold mx-auto"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-6">
-            <h3 className="heading-md mb-6">Let's Start a Conversation</h3>
-            <p className="text-gray-600 mb-8">
+            <h3 className="heading-md mb-6 text-black">Let's Start a Conversation</h3>
+            <p className="text-black mb-8">
               We'd love to hear about your project and how we can help. Fill out the form, and we'll be in touch as soon as possible.
             </p>
-            
+
             <div className="flex items-start space-x-4">
               <MapPin className="w-5 h-5 text-gold mt-1" />
               <div>
-                <h4 className="font-medium">Our Location</h4>
-                <address className="text-gray-600 not-italic">
+                <h4 className="font-medium text-black">Our Location</h4>
+                <address className="text-black not-italic">
                   1234 Park Avenue, <br />
                   New York, NY 10001
                 </address>
               </div>
             </div>
-            
+
             <div className="flex items-start space-x-4">
               <Phone className="w-5 h-5 text-gold mt-1" />
               <div>
-                <h4 className="font-medium">Call Us</h4>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <h4 className="font-medium text-black">Call Us</h4>
+                <p className="text-black">+1 (555) 123-4567</p>
               </div>
             </div>
-            
+
             <div className="flex items-start space-x-4">
               <Mail className="w-5 h-5 text-gold mt-1" />
               <div>
-                <h4 className="font-medium">Email Us</h4>
-                <p className="text-gray-600">info@belfortcompany.com</p>
+                <h4 className="font-medium text-black">Email Us</h4>
+                <p className="text-black">info@belfortcompany.com</p>
               </div>
             </div>
           </div>
-          
-          <div className="lg:col-span-2 bg-light-gray p-8">
+
+          <div className="lg:col-span-2 bg-white p-8 text-gray-800">
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <input 
+                  <input
                     type="text"
                     name="name"
                     value={formData.name}
@@ -94,7 +106,7 @@ const ContactSection: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <input 
+                  <input
                     type="email"
                     name="email"
                     value={formData.email}
@@ -106,7 +118,7 @@ const ContactSection: React.FC = () => {
                 </div>
               </div>
               <div className="mb-6">
-                <input 
+                <input
                   type="text"
                   name="subject"
                   value={formData.subject}
@@ -116,7 +128,7 @@ const ContactSection: React.FC = () => {
                 />
               </div>
               <div className="mb-6">
-                <textarea 
+                <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -126,7 +138,7 @@ const ContactSection: React.FC = () => {
                   className="w-full p-3 border border-gray-300 focus:border-gold focus:outline-none bg-white resize-none"
                 ></textarea>
               </div>
-              <button 
+              <button
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
@@ -143,7 +155,7 @@ const ContactSection: React.FC = () => {
                   </>
                 )}
               </button>
-              
+
               {submitSuccess && (
                 <div className="mt-4 p-3 bg-green-50 text-green-800 border border-green-200">
                   Your message has been sent successfully. We'll be in touch soon!
